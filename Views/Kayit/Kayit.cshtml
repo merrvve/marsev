@@ -1,0 +1,82 @@
+﻿@model Kayit
+<div class="container px-5 my-5">
+  
+    <h3>Kayıt Formu</h3>
+    <form id="kayitForm" method="post" asp-controller="Kayit" asp-action="Kayit" asp-area="">
+        <div class="mb-3">
+            <label class="form-label" for="adi">Adı</label>
+            <input asp-for="Adi" class="form-control" id="adi" type="text" placeholder="Adı" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="soyadi">Soyadı</label>
+            <input asp-for="Soyadi" class="form-control" id="soyadi" type="text" placeholder="Soyadı" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="ePosta">E-posta</label>
+            <input asp-for="Email" class="form-control" id="ePosta" type="email" placeholder="E-posta" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="telefon">Telefon</label>
+            <input asp-for="Telefon" class="form-control" id="telefon" type="text" placeholder="(5--)--- -- --" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="calistigiKurum">Çalıştığı Kurum</label>
+            <input asp-for="Kurum" class="form-control" id="calistigiKurum" type="text" placeholder="Çalıştığı Kurum" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="sehir">Şehir</label>
+            <input asp-for="Sehir" class="form-control" id="sehir" type="text" placeholder="Şehir" required />
+        </div><br />
+        <div class="mb-3">
+            <label class="form-label" for="meslek">Meslek</label>
+            <select asp-for="Meslek" class="form-control" id="meslek" aria-label="Meslek">
+                <option value="Doktor">Doktor</option>
+                <option value="Ebe">Ebe</option>
+                <option value="Hemşire">Hemşire</option>
+                <option value="Diğer">Diğer</option>
+            </select>
+        </div><br />
+        <div class="mb-3">
+            <label class="form-label" for="kurs">Katılmak İstediğiniz Kurs</label>
+            <select asp-for="Kurs" class="form-control" id="meslek" aria-label="Kurs">
+              
+               
+                <option value="6 Mayıs İhmal ve İstismar Kursu">
+                    6 Mayıs - AİLE HEKİMLİĞİNDE
+                    ÇOCUK İHMAL VE İSTİSMAR
+                    VAKALARINI TANIMA VE
+                    YÖNETME KURSU
+                </option>
+                <option value="13 Mayıs İhmal ve İstismar Kursu">
+                    13 Mayıs - AİLE HEKİMLİĞİNDE
+                    ÇOCUK İHMAL VE İSTİSMAR
+                    VAKALARINI TANIMA VE
+                    YÖNETME KURSU
+                </option>
+            </select>
+        </div>
+    
+        <div class="d-grid">
+            <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Gönder</button>
+        </div>
+       @* <p>Kurs ücretleri vakfımıza bağış olarak alınacak ve depremzede öğrencilere burs sağlanmasında kullanılacaktır.</p>
+        <h3>Kurs Ücretleri:</h3>
+        
+        <h4>Sağlık Profesyoneli Eğitimde Ölçme ve Değerlendirme Kursu:</h4>
+
+        <p>
+            Uzman ve akademisyenler için: 600 TL<br />
+            Uzmanlık ve yüksek lisans öğrencileri için: 300 TL<br />
+        </p>
+        <h3>Banka bilgileri:</h3>
+
+
+        <br>
+        <b>Vakfımızın banka hesabına açıklama kısmına "Bağış" yazarak yaptığınız bağış ödemesi dekontunu <a href="marsev@marsev.org"> marsev@marsev.org </a>adresine gönderdiğinizde kaydınız kesinleşecektir.</b><br><br>
+        Hesap adı: Marmara Sağlık Eğitim ve Araştırma Vakfı (MAR-SEV)<br><br>
+        Banka ve Şube: VakıfBank Ümraniye Şubesi<br><br>
+        IBAN: TR 76 0001 5001 5800 7286 2542 60
+        <br>*@
+
+    </form>
+</div>

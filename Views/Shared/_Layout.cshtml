@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Marmara Sağlık Eğitim Vakfı</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Vakıf, Tıp Eğitimi ,Marsev">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/bootstrap-theme.min.css" /> 
+    <link rel="stylesheet" href="~/css/fontAwesome.css" />
+    <link rel="stylesheet" href="~/css/hero-slider.css" />
+    <link rel="stylesheet" href="~/css/owl-carousel.css" />
+    <link rel="stylesheet" href="~/css/datepicker.css" />
+    <link rel="stylesheet" href="~/css/templatemo-style.css" />
+    <link rel="shortcut icon" type="image/png" href="~/img/m.ico" />
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+</head>
+<body>
+    <div class="wrap">
+        <header id="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button id="primary-nav-button" type="button">Menu</button>
+                        <div class="logo">
+                            <a asp-area="" asp-controller="Home" asp-action="Index"> <img src="~/img/marsev-logo-rs2.jpg" alt="MARSEV"></a>
+                        </div>
+                        <nav id="primary-nav" class="dropdown cf">
+                            <ul class="dropdown menu">
+                                <li class='active'><a asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
+                                <li>
+                                    <a href="#">Kurumsal</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a asp-area="" asp-controller="Home" asp-action="Amaclar">Amaç ve Hedefler</a>
+
+                                        </li>
+                                        <li>
+                                            <a asp-area="" asp-controller="Home" asp-action="Kurul">Yönetim Kurulu</a>
+
+                                        </li>
+                                        <!--                                        <li><a href="#">Yönetim Kurulu</a>
+                                                                                    <ul class="sub-menu">
+                                                                                        <li><a href="#">Sub Visited Menu 7</a></li>
+                                                                                        <li><a href="#">Sub Visited #8</a></li>
+                                                                                        <li><a href="#">Sub Visited Menu 9</a></li>
+                                                                                        <li><a href="#">Sub Visited #10</a></li>
+                                                                                    </ul>
+                                                                                </li>   -->
+                                    </ul>
+                                </li>
+                                <li><a asp-controller="Home" asp-action="Duyurular">Duyurular</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="Bagis">Bağış</a></li>
+                                <!--<li><a class="scrollTo" href="onkayit.html">Kurs Ön Kayıt</a></li>
+                                -->
+                                <!-- / <li><a class="scrollTo" data-scrollTo="services" href="#">Our Services</a></li> -->
+                                <li><a asp-area="" asp-controller="Form" asp-action="IletisimFormu">İletişim</a></li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li class="active"><a asp-controller="DashBoard" asp-action="Index" asp-area="Management">Yönetim</a></li>
+
+                                    <li>
+                                        <a asp-controller="Auth" asp-action="LogOut" asp-area="">
+                                            Çıkış Yap
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                                                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                            </svg>
+                                        </a>
+                                        
+                                       
+                                    </li>
+                                    
+                                }
+                                else
+                                {
+                                    <li>
+                                        <a asp-controller="Auth" asp-action="Login" asp-area="">Giriş Yap
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
+                                                <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                            </svg>
+                                        </a>
+                                    
+                                    </li>
+                                    
+                                }
+
+                               
+                            </ul>
+                        </nav><!-- / #primary-nav -->
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+
+
+
+    @RenderBody()
+    <script src="~/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js" asp-append-version="true"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" type="text/javascript"></script>
+    <script>window.jQuery || document.write('<script src="~/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="~/js/vendor/bootstrap.min.js"></script>
+
+    <script src="~/js/datepicker.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/main.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="about-veno">
+                        <div class="logo">
+                            <img src="~/img/marsev-logo-rs.jpg" alt="MARSEV">
+                        </div>
+                        <p>Sosyal medyada bizi takip ederek yeni duyurulardan haberdar olabilirsiniz.</p>
+                        <ul class="social-icons">
+                            <li>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="#"><i class="fa fa-rss"></i></a>
+                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="useful-links">
+                        <div class="footer-heading">
+                            <h4>Bağlantılar</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+
+
+                                    <li><a asp-area="" asp-controller="Home" asp-action="Kurul"><i class="fa fa-stop"></i>Yönetim Kurulu</a></li>
+
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="contact-info">
+                        <div class="footer-heading">
+                            <h4>İletişim Bilgileri</h4>
+                        </div>
+                        <p>Aşağıdaki iletişim bilgileri ile bize ulaşabilirsiniz.</p>
+                        <ul>
+
+                            <li><span>E-posta:</span><a href="marsev@marsev.org">marsev@marsev.org</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="sub-footer">
+        <p>
+            Copyright &copy; 2020 MARSEV - Marmara Sağlık Eğitim ve Araştırma Vakfı
+
+        </p>
+        <!-- Sayaclar.com Code Start  -->
+        <div align="center"><script language="Javascript" src="http://sa.sayaclar.com/c/s4.php?a=i9lugs4&s=2a6"></script></div>
+        <!-- Sayaclar.com Code End -->
+
+    </div>
+</body>
+</html>

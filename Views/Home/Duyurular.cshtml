@@ -1,0 +1,162 @@
+﻿@{
+    ViewData["Title"] = "Duyurular";
+}
+@model (List<Etkinlik> gecmisEtk, List<Etkinlik> yaklasanEtk)
+
+<section class="featured-places" id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <span>Duyurular</span>
+                    <h2>Yaklaşan Etkinlikler</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            @{
+                if (Model.yaklasanEtk.Count == 0)
+                {
+                    <p>
+                        Yaklaşan etkinliğimiz bulunmamaktadır.
+                    </p>
+                }
+            }
+            @foreach (Etkinlik item in Model.yaklasanEtk)
+            {
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="featured-item">
+                        <div class="thumb">
+                            <img src="~/img/medical-education.jpg" alt="">
+                            <div class="overlay-content">
+                                <ul>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <div class="date-content">
+                                <h6>
+                                    @item.EtkinlikTarihi.Day
+                                </h6>
+                                <span>
+                                    @item.EtkinlikTarihi.ToString("MMMM")
+
+
+                                    @item.EtkinlikTarihi.Year
+                                </span>
+                            </div>
+                            <div class="down-content">
+                                <h4>@item.EtkinlikAdi</h4>
+                                <span>@item.EtkinlikTuru</span>
+                                <p>
+                                    @item.Aciklama
+                                </p>
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <div class="text-button">
+                                            <a href="@item.Detay">Daha Fazlası</a>
+                                        </div>
+                                        <div class="text-button">
+                                            <a asp-action="Kayit" asp-controller="Kayit" asp-area="">Kayıt</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+
+
+
+
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="featured-places" id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <span>Duyurular</span>
+                    <h2>Geçmiş Etkinlikler</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            @foreach (Etkinlik item in Model.gecmisEtk)
+            {
+
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="featured-item">
+                        <div class="thumb">
+                            <img src="~/img/medical-education.jpg" alt="">
+                            <div class="overlay-content">
+                                <ul>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <div class="date-content">
+                                <h6>
+                                    @item.EtkinlikTarihi.Day
+                                </h6>
+                                <span>
+                                    @item.EtkinlikTarihi.ToString("MMMM")
+
+
+                                    @item.EtkinlikTarihi.Year
+                                </span>
+                            </div>
+                        </div>
+                        <div class="down-content">
+                            <h4>@item.EtkinlikAdi</h4>
+                            <span>@item.EtkinlikTuru</span>
+                            <p>
+                                @item.Aciklama
+                            </p>
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="text-button">
+                                        <a href="@item.Detay">Daha Fazlası</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            }
+
+
+
+
+
+
+        </div>
+    </div>
+</section>
+
+

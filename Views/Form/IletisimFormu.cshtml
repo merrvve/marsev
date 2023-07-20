@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "İletişim";
+}
+
+@model FormModel
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-2 sidenav">
+            <p></p>
+        </div>
+        <div class="col-sm-8 text-left">
+
+                    <div class="line-dec"></div>
+                    <h2>Bize Ulaşın</h2>
+                    <br>
+                    <a href="marsev@marsev.org">marsev@marsev.org</a> adresine e-posta göndererek bize ulaşabilirsiniz.<br><br>
+                    <br>
+                    
+                        <form id="kayitForm" method="post" asp-controller="Form" asp-action="FormVerisiEkle" asp-area="">
+                            <div class="mb-3">
+                                <label class="form-label" for="adi">Adı</label>
+                                <input asp-for="isim" class="form-control" id="adi" type="text" placeholder="Adı" required />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="soyadi">Soyadı</label>
+                                <input asp-for="soyisim" class="form-control" id="soyadi" type="text" placeholder="Soyadı" required />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="ePosta">E-posta</label>
+                                <input asp-for="mail" class="form-control" id="ePosta" type="email" placeholder="E-posta" required />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="telefon">Mesajınız</label>
+                                <textarea asp-for="mesaj" class="form-control" id="mesaj" placeholder="Mesajınızı buraya yazabilirsiniz." required></textarea>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Gönder</button>
+                            </div>
+                        </form>
+                    
+                    
+             
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+ 
+

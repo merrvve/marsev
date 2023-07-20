@@ -1,0 +1,275 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+@model (List<Etkinlik> gecmisEtk, List<Etkinlik> yaklasanEtk)
+
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-2 sidenav">
+            <p></p>
+        </div>
+        <div class="col-sm-8 text-left">
+         @*   <div>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                       
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            
+                            <a asp-controller="Kayit" asp-action="Kayit" asp-area="">
+                                <img src="img/od2023-03.jpeg" alt="Ölçme Değerlendirme Kursu">
+                            </a>
+                        </div>
+
+                       
+
+                        <div class="item">
+                            <div class="banner-caption">
+
+
+                                <div class="line-dec"></div>
+                                <center>
+                                    <h1>MARMARA SAĞLIK EĞİTİM VE ARAŞTIRMA VAKFI (MAR-SEV)</h1>
+                                </center>
+                                <span>
+                                    Marmara Sağlık Eğitim ve Araştırma Vakfı, birinci basamak sağlık hizmetleri konusunda projeler oluşturarak birinci basamak sağlık hizmetlerine ve eğitimine katkı sağlamak ve Türkiye’de yaşayan herkese eşit, dengeli ve mümkün olan en yüksek düzeyde koruyucu ve iyileştirici sağlık hizmetleri ile eğitim ve diğer sosyal hizmetleri etkin bir biçimde sunabilmek için mezuniyet öncesi, mezuniyet sonrası ve hizmet içi eğitim yapan her düzeyde eğitim kurumları açmak, işletmek, seminerler, kurslar düzenlemek amacıyla hizmet veren bir vakıf kuruluşudur.
+                                </span>
+                                <br><br>
+                                <img src="img/marsev-zoom.png" /><br><br />
+                                <div class="blue-button">
+                                    <a asp-controller="Home" asp-action="Amaclar">Daha Fazlası</a><br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Önceki</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Sonraki</span>
+                    </a>
+                </div>
+            </div>
+*@
+            <div class="banner-caption">
+
+
+                <div class="line-dec"></div>
+                
+                <a href="~/img/ihmal.pdf"><img src="img/ihmal.png" /></a>
+                <div class="blue-button">
+                    <a asp-controller="Kayit" asp-action="Kayit">Kayıt</a>
+                    <a href="~/img/ihmal.pdf">Daha Fazlası</a><br />
+                </div>
+            </div>
+
+       
+
+            <div class="banner-caption">
+
+
+                <div class="line-dec"></div>
+                <center>
+                    <h1>MARMARA SAĞLIK EĞİTİM VE ARAŞTIRMA VAKFI (MAR-SEV)</h1>
+                </center>
+                <span>
+                    Marmara Sağlık Eğitim ve Araştırma Vakfı, birinci basamak sağlık hizmetleri konusunda projeler oluşturarak birinci basamak sağlık hizmetlerine ve eğitimine katkı sağlamak ve Türkiye’de yaşayan herkese eşit, dengeli ve mümkün olan en yüksek düzeyde koruyucu ve iyileştirici sağlık hizmetleri ile eğitim ve diğer sosyal hizmetleri etkin bir biçimde sunabilmek için mezuniyet öncesi, mezuniyet sonrası ve hizmet içi eğitim yapan her düzeyde eğitim kurumları açmak, işletmek, seminerler, kurslar düzenlemek amacıyla hizmet veren bir vakıf kuruluşudur.
+                </span>
+                <br><br>
+                <img src="img/marsev-zoom.png" /><br><br />
+                <div class="blue-button">
+                    <a asp-controller="Home" asp-action="Amaclar">Daha Fazlası</a><br />
+                </div>
+            </div>
+
+        </div>
+    
+        <div class="col-sm-2 sidenav">
+            <div class="well">
+                <p><h4>MAR-SEV İşletmesi Kitap Satışları</h4></p>
+                <p>MAR-Sev İşletmesi aracılığıyla Adölesan Sağlığı ve Yaşlı Sağlığı kitapları satışa sunulmuştur. </p>
+                <p><img src="img/adolesan.jpg"></p>
+
+                <p><img src="img/yasli.jpeg"></p>
+
+                <p><img src="img/McWhinney.jpeg"></p>
+                <p>Ayrıntılı bilgi almak için <a asp-controller="Home" asp-action="Kitap">tıklayınız.</a></p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<section class="featured-places" id="blog">
+   
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <span>Duyurular</span>
+                    <h2>Yaklaşan Etkinlikler</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            @{
+                if (Model.yaklasanEtk.Count == 0)
+                {
+                    <p>
+                    Yaklaşan etkinliğimiz bulunmamaktadır.
+                    </p>
+                }
+            }
+            @foreach (Etkinlik item in Model.yaklasanEtk)
+            {
+
+                <div class="col-md-4 col-sm-6 col-xs-12 ">
+                    <div class="featured-item">
+                        <div class="thumb">
+                            <img src="~/img/medical-education.jpg" alt="">
+                            <div class="overlay-content">
+                                <ul>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <div class="date-content">
+                                <h6>
+                                    @item.EtkinlikTarihi.Day
+                                </h6>
+                                <span>
+                                    @item.EtkinlikTarihi.ToString("MMMM")
+
+
+                                    @item.EtkinlikTarihi.Year
+                                </span>
+                            </div>
+                            <div class="down-content">
+                                <h4>@item.EtkinlikAdi</h4>
+                                <span>@item.EtkinlikTuru</span>
+                                <p>
+                                    @item.Aciklama
+                                </p>
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <div class="text-button">
+                                            <a href="@item.Detay">Daha Fazlası</a>
+                                        </div>
+                                        <div class="text-button">
+                                            <a asp-action="Kayit" asp-controller="Kayit" asp-area="">Kayıt</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+
+
+
+
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="featured-places" id="blog">
+    <div class="container">
+        
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <span>Duyurular</span>
+                    <h2>Geçmiş Etkinlikler</h2>
+                </div>
+            </div>
+        </div>
+       
+        <div class="row row-cols-1 row-cols-md-3">
+            
+            @foreach (Etkinlik item in Model.gecmisEtk)
+            {
+                
+                
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="featured-item">
+                        <div class="thumb">
+                            <img src="~/img/medical-education.jpg" alt="">
+                            <div class="overlay-content">
+                                <ul>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <div class="date-content">
+                                <h6>
+                                    @item.EtkinlikTarihi.Day
+                                </h6>
+                                <span>
+                                    @item.EtkinlikTarihi.ToString("MMMM")
+
+
+                                    @item.EtkinlikTarihi.Year
+                                </span>
+                            </div>
+                        </div>
+                        <div class="down-content">
+                                <h4>@item.EtkinlikAdi</h4>
+                                <span>@item.EtkinlikTuru</span>
+                                <p>
+                                    @item.Aciklama
+                                </p>
+                            <div class="row">
+
+                                 <div class="col-md-6">
+                                        <div class="text-button">
+                                        <a href="@item.Detay">Daha Fazlası</a>
+                                        </div>
+                                  </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
+               
+             }
+
+
+
+
+
+            </div>
+    </div>
+</section>
+
+
+
+

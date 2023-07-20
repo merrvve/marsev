@@ -1,0 +1,64 @@
+﻿
+
+@model Etkinlik
+<div class="container">
+    <form method="post" asp-controller="DashBoard" asp-area="Management" asp-action="EtkinlikDuzenle">
+        <div>
+            <label class="form-label" asp-for="EtkinlikAdi">
+                Etkinlik Adı
+            </label>
+            <input type="text" class="form-control" asp-for="EtkinlikAdi" />
+        </div>
+        <div class="form-group">
+            <label class="form-label" asp-for="EtkinlikTipi">
+                Etkinlik Tipi
+            </label>
+            <select class="form-control" id="input_41" asp-for="EtkinlikTipi" style="width:310px" data-component="dropdown" aria-labelledby="label_41 sublabel_input_41">
+                <option value=""> Lütfen Seçiniz </option>
+                <option value="Yaklasan">  Yaklaşan Etkinlik </option>
+                <option value="Gecmis">  Geçmiş Etkinlik </option>
+
+
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label" asp-for="EtkinlikTuru">
+                Etkinlik Türü
+            </label>
+            <select class="form-control" id="input_41" asp-for="EtkinlikTuru" style="width:310px" data-component="dropdown" aria-labelledby="label_41 sublabel_input_41">
+                <option value=""> Lütfen Seçiniz </option>
+                <option value="Egitim"> Eğitim </option>
+                <option value="Seminer"> Seminer </option>
+                <option value="Workshop">  Workshop</option>
+                <option value="Toplantı">  Toplantı</option>
+
+
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label" asp-for="EtkinlikTarihi">
+                Etkinlik Tarihi
+            </label>
+            <input type="date" class="form-control" asp-for="EtkinlikTarihi" />
+        </div>
+        <div class="form-group">
+            <label class="form-label" asp-for="Aciklama">
+                Açıklama
+            </label>
+            <input type="text" class="form-control" asp-for="Aciklama" />
+        </div>
+        <div class="form-group">
+            
+            <label class="form-label" asp-for="Detay">
+                Detay
+            </label>
+            <input type="text" class="form-control" asp-for="Detay" />
+        </div>
+        <button type="submit" class="btn btn-default">Etkinlik Duyurusunu Düzenle</button>
+
+
+
+
+    </form>
+
+</div>

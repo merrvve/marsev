@@ -1,0 +1,56 @@
+﻿@model Kayit
+<h3>Ödeme Bilgilerini Düzenle</h3>
+<div class="container px-5 my-5">
+    <form id="kayitForm" method="post" asp-controller="Kurs" asp-action="OdemeDuzenle" asp-area="Management">
+        <div class="mb-3">
+             <input asp-for="Adi" class="form-control" id="adi" type="hidden" placeholder="Adı" />
+        </div>
+        <div class="mb-3">
+            <input asp-for="Soyadi" class="form-control" id="soyadi" type="hidden" placeholder="Soyadı" />
+        </div>
+        <div class="mb-3">
+            <input asp-for="Email" class="form-control" id="ePosta" type="hidden" placeholder="E-posta" required />
+        </div>
+        <div class="mb-3">
+            <input asp-for="Telefon" class="form-control" id="telefon" type="hidden" placeholder="(5--)--- -- --" required />
+        </div>
+        <div class="mb-3">
+            <input asp-for="Kurum" class="form-control" id="calistigiKurum" type="hidden" placeholder="Çalıştığı Kurum" required />
+        </div>
+        <div class="mb-3">
+            <input asp-for="Sehir" class="form-control" id="sehir" type="hidden" placeholder="Şehir" required />
+        </div><br />
+        <div class="mb-3">
+            <select hidden asp-for="Meslek" class="form-select" id="meslek" aria-label="Meslek">
+                <option value="Doktor">Doktor</option>
+                <option value="Ebe">Ebe</option>
+                <option value="Hemşire">Hemşire</option>
+                <option value="Diğer">Diğer</option>
+            </select>
+        </div><br />
+        
+            <select hidden asp-for="Kurs" class="form-select" id="meslek" aria-label="Kurs" >
+                <option value="Refleksiypn">Sağlık Profesyoneli için Uygulamalı Eğitimde Refleksiyon Kullanımı</option>
+                <option value="Ebe">Sağlık Profesyoneli Eğitiminde Ölçme Değerlendirme</option>
+            </select>
+        <br />
+        <div class="form-group">
+            <h4>Mevcut ödeme durumu: <b>@Model.Odeme</b></h4><br />
+            <select asp-for="Odeme" class="form-control" aria-label="Default select example">
+                <option value="Bekleniyor" selected>Bekleniyor</option>
+                <option value="Ödendi">Ödendi</option>
+            </select>
+        </div>
+
+        <div class="d-grid">
+            <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Ödeme Bilgisini Güncelle</button>
+        </div>
+    </form>
+     
+</div>
+
+
+
+
+
+

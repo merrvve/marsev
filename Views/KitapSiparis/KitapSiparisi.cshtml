@@ -1,0 +1,63 @@
+﻿@model KitapTalepModel
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-2 sidenav">
+            <p></p>
+        </div>
+        <div class="col-sm-8 text-left">
+            <p>Satın alma işlemini gerçekleştirmek için ödemeyi MAR-SEV İşletmesi hesabına havale/EFT ile gerçekleştirip aşağıdaki formu doldurmanız rica olunur. En kısa zamanda sizinle iletişime geçilecektir.</p>
+            <p>
+                <b>
+                    Marmara sağlık eğitim ve araştırma vakfı işletmesi<br>
+                    TR78 0001 5001 5800 7316 4737 98
+                </b>
+            </p>
+
+
+            <form method="post" asp-action="KitapSiparisEkle" asp-area="" asp-controller="KitapSiparis" autocomplete="on">
+
+                <div class="mb-3">
+                    <label class="form-label" for="adi">Adı</label>
+                    <input asp-for="isim" class="form-control" id="adi" type="text" placeholder="Adı" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="soyadi">Soyadı</label>
+                    <input asp-for="soyisim" class="form-control" id="soyadi" type="text" placeholder="Soyadı" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="ePosta">E-posta</label><span class="alert-danger">*</span>
+                    <input asp-for="email" class="form-control" id="ePosta" type="email" placeholder="ornek@ornek.com" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="telefon">Telefon</label>
+                    <input asp-for="telefonno" class="form-control" id="mesaj" type="text" placeholder=" (5--)--- -- --" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="telefon">Adres</label>
+                    <input asp-for="adres" class="form-control" id="mesaj" type="text" placeholder="Adresiniz" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Kitap</label>
+
+                    <select class="form-control" id="input_41" asp-for="kitap">
+                        <option selected value="Adolesan Sagligi"> Adölesan Sağlığı </option>
+                        <option value="Yasli Sagligina Bütüncül Yaklasim"> Yaşlı Sağlığına Bütüncül Yaklaşım </option>
+                        <option value="McWhinney Aile Hekimligi"> McWhinney Aile Hekimliği </option>
+
+                    </select>
+
+                </div>
+                <input type="hidden" asp-for="kitapId" value="1"/>
+                <div class="mb-3">
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Gönder</button>
+                    </div>
+                </div>
+                
+            </form>
+
+</div>
+</div>
+</div>
+
+

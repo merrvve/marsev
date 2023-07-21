@@ -12,8 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<MMDbContext>(options => options.UseSqlServer("Server=104.247.162.242\\MSSQLSERVER2019;Database=marsevor_marsevmain;uid=marsevor_admin;pwd=F20t91b~j;TrustServerCertificate=True"));
-//builder.Services.AddDbContext<MMDbContext>(options => options.UseSqlServer("Server=.;Database=MarsevMain;uid=sa;pwd=123;TrustServerCertificate=True"));
+builder.Services.AddDbContext<MMDbContext>(options => options.UseSqlServer(""));
+//builder.Services.AddDbContext<MMDbContext>(options => options.UseSqlServer(""));
 
 //builder.Services.AddDbContext<MMDbContext>(options => options.UseSqlServer(builder.Configuration["ConnectionStrings:Mssql"]));
 
